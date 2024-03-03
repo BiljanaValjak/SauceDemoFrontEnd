@@ -1,5 +1,6 @@
 package saucedemotests;
 
+import org.junit.After;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.WebDriver;
@@ -24,4 +25,5 @@ public class LoginPageParameterizedTests {
         loginPage.clickLoginButton();
         assertEquals("Epic sadface: Username and password do not match any user in this service", loginPage.errorMessageDisplayed());
     }
+
 }

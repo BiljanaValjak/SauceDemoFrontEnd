@@ -14,7 +14,7 @@ public class SideBarMenu {
     private By aboutLink = By.id("about_sidebar_link");
     private By logoutLink = By.id("logout_sidebar_link");
     private By resetAppStateLink = By.id("reset_sidebar_link");
-    private By closeMenuButton = By.id("react-burger-cross-btn");
+    private By closeMenuButton = By.xpath("//*[@id=\"menu_button_container\"]/div/div[2]/div[2]/div");
 
     public SideBarMenu(WebDriver driver){
         this.driver = driver;

@@ -27,7 +27,7 @@ public class ProductsPage {
     public ProductsPage(WebDriver driver) {
         this.driver = driver;
     }
-    public String productsPageTitle() {
+    public String productsPageTitleDisplayed() {
         return driver.findElement(productsPageTitle).getText();
     }
     public String inventoryList() {

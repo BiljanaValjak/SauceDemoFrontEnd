@@ -32,13 +32,11 @@ public class SingleItemReviewPageTests {
         loginPage.clickLoginButton();
         productsPage.backpackTitleClick();
     }
-
     @Test
     public void inventoryItemPageDisplayedTest(){
         singleItemReviewPage.singleItemPageDisplayed();
         assertTrue(singleItemReviewPage.singleItemPageDisplayed());
     }
-
     @Test
     public void singleItemTitleDisplayedTest(){
         assertEquals("Sauce Labs Backpack", singleItemReviewPage.selectedItemTitleDisplayed());
@@ -46,7 +44,6 @@ public class SingleItemReviewPageTests {
         assertEquals("\"DM Mono\", sans-serif", singleItemReviewPage.selectedItemTitleFontFamily());
         assertEquals("#132322", singleItemReviewPage.selectedItemTitleColor());
     }
-
     @Test
     public void singleItemDescriptionDisplayedTest(){
         assertEquals("carry.allTheThings() with the sleek, " +
@@ -56,7 +53,6 @@ public class SingleItemReviewPageTests {
         assertEquals("\"DM Sans\", sans-serif", singleItemReviewPage.selectedItemDescriptionFontFamily());
         assertEquals("#132322", singleItemReviewPage.selectedItemDescriptionColor());
     }
-
     @Test
     public void singleItemPriceDisplayedTest(){
         assertEquals("$29.99", singleItemReviewPage.selectedItemPriceDisplayed());
@@ -64,7 +60,6 @@ public class SingleItemReviewPageTests {
         assertEquals("\"DM Mono\", sans-serif", singleItemReviewPage.selectedItemPriceFontFontFamily());
         assertEquals("#132322", singleItemReviewPage.selectedItemPriceColor());
     }
-
     @Test
     public void selectedItemAddToCartButtonTest(){
         assertEquals("16px", singleItemReviewPage.selectedItemAddToCartButtonFontSize());
@@ -74,7 +69,6 @@ public class SingleItemReviewPageTests {
         singleItemReviewPage.selectedItemAddToCartButton();
         assertTrue(singleItemReviewPage.yourCartBadge());
     }
-
     @Test
     public void selectedItemRemoveButtonTest(){
         singleItemReviewPage.selectedItemAddToCartButton();
@@ -86,14 +80,12 @@ public class SingleItemReviewPageTests {
         singleItemReviewPage.selectedItemRemoveButton();
         assertFalse(singleItemReviewPage.yourCartBadge());
     }
-
     @Test
     public void clickBacToProductsLinkTest(){
         singleItemReviewPage.clickBackToProductsLink();
-        productsPage.productsPageTitle();
-        assertEquals("Products", productsPage.productsPageTitle());
+        productsPage.productsPageTitleDisplayed();
+        assertEquals("Products", productsPage.productsPageTitleDisplayed());
     }
-
     @After
     public void closeBrowser(){
         driver.quit();
