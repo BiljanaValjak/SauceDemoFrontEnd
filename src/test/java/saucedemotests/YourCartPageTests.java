@@ -10,11 +10,13 @@ import pages.*;
 import static org.junit.Assert.*;
 
 public class YourCartPageTests {
+
     private WebDriver driver;
     private LoginPage loginPage;
     private ProductsPage productsPage;
     private YourCartPage yourCartPage;
     private CheckoutYourInformationPage checkoutYourInformation;
+
 
     @Before
     public void invokeBrowserTest() {
@@ -32,24 +34,28 @@ public class YourCartPageTests {
 
         loginPage.clickLoginButton();
     }
+
     @Test
     public void yourCartPageTitleDisplayed(){
         productsPage.clickYourCartIcon();
         yourCartPage.yourCartPageDisplayed();
         assertEquals("Your Cart", yourCartPage.yourCartPageDisplayed());
     }
+
     @Test
     public void quantityLabelDisplayedTest(){
         productsPage.clickYourCartIcon();
         yourCartPage.quantityLabelDisplayed();
         assertTrue(yourCartPage.quantityLabelDisplayed());
     }
+
     @Test
     public void descriptionLabelDisplayedTest(){
         productsPage.clickYourCartIcon();
         yourCartPage.descriptionLabelDisplayed();
         assertTrue(yourCartPage.descriptionLabelDisplayed());
     }
+
     @Test
     public void addFirstItemToCartAndRemoveItTest(){
       productsPage.clickAddToCartButtonJacket();
@@ -66,6 +72,7 @@ public class YourCartPageTests {
       yourCartPage.clickRemoveButtonFirstItem();
       assertFalse(yourCartPage.yourCartItemsCountBadge());
     }
+
     @Test
     public void clickContinueShoppingTest(){
         productsPage.clickYourCartIcon();
@@ -73,6 +80,7 @@ public class YourCartPageTests {
         productsPage.productsPageTitleDisplayed();
         assertEquals("Products", productsPage.productsPageTitleDisplayed());
     }
+
     @Test
     public void clickCheckoutYourInformationTest(){
         productsPage.clickYourCartIcon();
@@ -80,6 +88,7 @@ public class YourCartPageTests {
         checkoutYourInformation.checkoutYourInformationTitle();
         assertEquals("Checkout: Your Information", checkoutYourInformation.checkoutYourInformationTitle());
     }
+
     @After
     public void closeBrowser(){
         driver.quit();

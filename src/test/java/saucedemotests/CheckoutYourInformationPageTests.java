@@ -10,12 +10,14 @@ import pages.*;
 import static org.junit.Assert.*;
 
 public class CheckoutYourInformationPageTests {
+
     private WebDriver driver;
     private LoginPage loginPage;
     private ProductsPage productsPage;
     private YourCartPage yourCartPage;
     private CheckoutYourInformationPage checkoutYourInformation;
     private CheckoutOverviewPage checkoutOverviewPage;
+
 
     @Before
     public void invokeBrowserTest() {
@@ -37,10 +39,12 @@ public class CheckoutYourInformationPageTests {
         productsPage.clickYourCartIcon();
         yourCartPage.checkoutButton();
     }
+
     @Test
     public void checkoutYourInformationPageDisplayedTest(){
         assertEquals("Checkout: Your Information", checkoutYourInformation.checkoutYourInformationTitle());
     }
+
     @Test
     public void successfulInputTest(){
         checkoutYourInformation.enterFirstName("Biljana");
@@ -50,11 +54,13 @@ public class CheckoutYourInformationPageTests {
         checkoutOverviewPage.checkOutOverviewTitleDisplayed();
         assertEquals("Checkout: Overview", checkoutOverviewPage.checkOutOverviewTitleDisplayed());
     }
+
     @Test
     public void unsuccessfulInputEmptyFieldsTest(){
         checkoutYourInformation.clickContinueButton();
         assertEquals("Error: First Name is required", checkoutYourInformation.errorMessage());
     }
+
     @Test
     public void unsuccessfulInputFirstNameEmptyFieldTest(){
         checkoutYourInformation.enterLastName("Valjak");
@@ -62,6 +68,7 @@ public class CheckoutYourInformationPageTests {
         checkoutYourInformation.clickContinueButton();
         assertEquals("Error: First Name is required", checkoutYourInformation.errorMessage());
     }
+
     @Test
     public void unsuccessfulInputLastEmptyFieldTest(){
         checkoutYourInformation.enterFirstName("Biljana");
@@ -69,6 +76,7 @@ public class CheckoutYourInformationPageTests {
         checkoutYourInformation.clickContinueButton();
         assertEquals("Error: Last Name is required", checkoutYourInformation.errorMessage());
     }
+
     @Test
     public void unsuccessfulInputZipCodeFieldTest(){
         checkoutYourInformation.enterFirstName("Biljana");
@@ -76,6 +84,7 @@ public class CheckoutYourInformationPageTests {
         checkoutYourInformation.clickContinueButton();
         assertEquals("Error: Postal Code is required", checkoutYourInformation.errorMessage());
     }
+
     @Test
     public void xButtonErrorMessage(){
         checkoutYourInformation.enterFirstName("Biljana");
@@ -84,6 +93,7 @@ public class CheckoutYourInformationPageTests {
         checkoutYourInformation.errorMsgDisplayed();
         assertFalse(checkoutYourInformation.errorMsgDisplayed());
     }
+
     @Test
     public void yourInformationInitialStateUserInterfaceTest(){
         assertEquals("14px", checkoutYourInformation.firstNameFieldFontSize());
@@ -95,32 +105,37 @@ public class CheckoutYourInformationPageTests {
         assertEquals("14px", checkoutYourInformation.zipCodeFieldFontSize());
         assertEquals("\"DM Sans\", Arial, Helvetica, sans-serif", checkoutYourInformation.zipCodeFieldFontFamily());
     }
+
     @Test
     public void yourInformationErrorStateUserInterfaceTest(){;
         checkoutYourInformation.clickContinueButton();
-        assertEquals("#e2231a", checkoutYourInformation.firstNameBottomBorderColor());
-        assertEquals("#e2231a", checkoutYourInformation.lastNameBottomBorderColor());
-        assertEquals("#e2231a", checkoutYourInformation.zipCodeBorderBottomColor());
+        assertEquals("#e2231a", checkoutYourInformation.firstNameFieldBottomBorderColor());
+        assertEquals("#e2231a", checkoutYourInformation.lastNameFieldBottomBorderColor());
+        assertEquals("#e2231a", checkoutYourInformation.zipCodeFieldBorderBottomColor());
         assertEquals("#e2231a",checkoutYourInformation.errorMessageContainerColor());
     }
+
     @Test
     public void continueButton(){
         assertEquals("16px", checkoutYourInformation.continueButtonFontSize());
         assertEquals("\"DM Sans\", Arial, Helvetica, sans-serif", checkoutYourInformation.continueButtonFontFamily());
         assertEquals("#3ddc91", checkoutYourInformation.continueButtonColor());
     }
+
     @Test
     public void cancelButton(){
         assertEquals("16px", checkoutYourInformation.cancelButtonFontSize());
         assertEquals("\"DM Sans\", sans-serif", checkoutYourInformation.cancelButtonFontFamily());
         assertEquals("#ffffff", checkoutYourInformation.cancelButtonColor());
     }
+
     @Test
     public void clickCancelButton(){
         checkoutYourInformation.clickCancelButton();
         yourCartPage.yourCartPageDisplayed();
         assertEquals("Your Cart", yourCartPage.yourCartPageDisplayed());
     }
+
     @After
     public void closeBrowser(){
         driver.quit();

@@ -10,8 +10,10 @@ import pages.LoginPage;
 import static org.junit.Assert.assertEquals;
 
 public class LoginPageParameterizedTests {
+
     private WebDriver driver;
     private LoginPage loginPage;
+
 
     @ParameterizedTest
     @ValueSource(strings = {"wrong username", "standard_user"})

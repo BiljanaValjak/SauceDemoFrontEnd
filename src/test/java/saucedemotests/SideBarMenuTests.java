@@ -11,10 +11,12 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class SideBarMenuTests {
+
     private WebDriver driver;
     private LoginPage loginPage;
     private ProductsPage productsPage;
     private SideBarMenu sideBarMenu;
+
 
     @Before
     public void invokeBrowser(){
@@ -32,6 +34,7 @@ public class SideBarMenuTests {
 
         sideBarMenu.clickMenuButton();
     }
+
     @Test
     public void allLinksSideBarMenuTest(){
         assertEquals("All Items", sideBarMenu.getAllLinksSideBarMenu().get(0).getText());
@@ -39,16 +42,19 @@ public class SideBarMenuTests {
         assertEquals("Logout", sideBarMenu.getAllLinksSideBarMenu().get(2).getText());
         assertEquals("Reset App State", sideBarMenu.getAllLinksSideBarMenu().get(3).getText());
     }
+
     @Test
     public void sideBarMenuAllItemsLinkTest(){
         assertEquals("All Items", sideBarMenu.allLinksSideBarMenu(0));
         sideBarMenu.allItemsSideBarLink();
     }
+
     @Test
     public void sideBarMenuAboutLinkTest(){
         assertEquals("About", sideBarMenu.allLinksSideBarMenu(1));
         sideBarMenu.aboutSideBarLink();
     }
+
     @Test
     public void sideBarMenuLogoutLinkTest(){
         assertEquals("Logout", sideBarMenu.allLinksSideBarMenu(2));
@@ -57,6 +63,7 @@ public class SideBarMenuTests {
         loginPage.loginPageTitleDisplayed();
         assertTrue(loginPage.loginPageTitleDisplayed());
     }
+
     @Test
     public void sideBarMenuResetAppStateLinkTest(){
         productsPage.clickAddToCartButtonBackpack();
@@ -67,10 +74,12 @@ public class SideBarMenuTests {
         assertEquals("Reset App State", sideBarMenu.allLinksSideBarMenu(3));
         sideBarMenu.resetAppStateSideBarLink();
     }
+
     @Test
     public void sideBarMenuCloseButtonTest(){
         sideBarMenu.clickCloseMenuButton();
     }
+
     @After
     public void closeBrowser(){
         driver.quit();

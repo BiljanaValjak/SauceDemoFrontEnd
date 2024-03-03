@@ -10,6 +10,7 @@ import pages.*;
 import static org.junit.Assert.*;
 
 public class CheckoutOverviewPageTests {
+
     private WebDriver driver;
     private LoginPage loginPage;
     private ProductsPage productsPage;
@@ -17,6 +18,7 @@ public class CheckoutOverviewPageTests {
     private CheckoutYourInformationPage checkoutYourInformation;
     private CheckoutOverviewPage checkoutOverviewPage;
     private CheckoutCompletePage checkoutCompletePage;
+
 
     @Before
     public void invokeBrowserTest() {

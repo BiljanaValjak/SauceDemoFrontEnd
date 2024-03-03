@@ -12,10 +12,12 @@ import pages.SocialMediaLinks;
 import static org.junit.Assert.assertEquals;
 
 public class SocialMediaLinksTests {
+
     private WebDriver driver;
     private ProductsPage productsPage;
     private LoginPage loginPage;
     private SocialMediaLinks socialMediaLinks;
+
 
     @Before
     public void invokeBrowserTest(){
@@ -32,24 +34,29 @@ public class SocialMediaLinksTests {
         loginPage.clickLoginButton();
         productsPage.backpackTitleClick();
     }
+
     @Test
     public void socialMediaLinksTest(){
         assertEquals("Twitter", socialMediaLinks.getAllSocialMediaLinks().get(0).getText());
         assertEquals("Facebook", socialMediaLinks.getAllSocialMediaLinks().get(1).getText());
         assertEquals("LinkedIn", socialMediaLinks.getAllSocialMediaLinks().get(2).getText());
     }
+
     @Test
     public void twitterLinkTest(){
         socialMediaLinks.twitterLink();
     }
+
     @Test
     public void facebookLinkTest(){
         socialMediaLinks.facebookLink();
     }
+
     @Test
     public void linkedInTest(){
         socialMediaLinks.linkedInLink();
     }
+
     @After
     public void closeBrowser(){
         driver.quit();

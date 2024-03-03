@@ -12,9 +12,11 @@ import static org.junit.Assert.*;
 
 
 public class LogInPageTests {
+
     private WebDriver driver;
     private LoginPage loginPage;
     private ProductsPage productsPage;
+
 
     @Before
     public void invokeBrowserTest(){
@@ -25,10 +27,12 @@ public class LogInPageTests {
         loginPage = new LoginPage(driver);
         productsPage = new ProductsPage(driver);
     }
+
     @Test
     public void loginPageTitleTest(){
         loginPage.loginPageTitleDisplayed();
     }
+
     @Test
     public void successfulLoginTest(){
         loginPage.enterUsername("standard_user");
@@ -37,6 +41,7 @@ public class LogInPageTests {
         productsPage.productsPageTitleDisplayed();
         assertEquals("Products", productsPage.productsPageTitleDisplayed());
     }
+
     @Test
     public void unsuccessfulLoginLockedOutUser(){
         loginPage.enterUsername("locked_out_user");
@@ -52,6 +57,7 @@ public class LogInPageTests {
         loginPage.errorMessageDisplayed();
         assertEquals("Epic sadface: Username is required", loginPage.errorMessageDisplayed());
     }
+
     @Test
     public void unsuccessfulLoginEmptyUsername(){
         loginPage.enterPassword("secret_sauce");
@@ -59,6 +65,7 @@ public class LogInPageTests {
         loginPage.errorMessageDisplayed();
         assertEquals("Epic sadface: Username is required", loginPage.errorMessageDisplayed());
     }
+
     @Test
     public void unsuccessfulLoginEmptyPassword(){
         loginPage.enterUsername("standard_user");
@@ -67,12 +74,14 @@ public class LogInPageTests {
         loginPage.errorMessageDisplayed();
         assertEquals("Epic sadface: Password is required", loginPage.errorMessageDisplayed());
     }
+
     @Test
     public void xButtonErrorMsgTest(){
         loginPage.clickLoginButton();
         loginPage.xButtonErrorMessage();
         assertFalse(loginPage.errorMsgDisplayed());
     }
+
     @Test
     public void loginFormInitialStateUserInterfaceTest(){
         assertEquals("14px", loginPage.usernameFieldFontSize());
@@ -85,13 +94,15 @@ public class LogInPageTests {
         assertEquals("\"DM Sans\", Arial, Helvetica, sans-serif", loginPage.loginButtonFontFamily());
         assertEquals("#3ddc91", loginPage.loginButtonColor());
     }
+
     @Test
     public void loginFormErrorStateUserInterfaceTest(){;
         loginPage.clickLoginButton();
-        assertEquals("#e2231a", loginPage.usernameBorderBottomColor());
-        assertEquals("#e2231a", loginPage.passwordBorderBottomColor());
+        assertEquals("#e2231a", loginPage.usernameFieldBorderBottomColor());
+        assertEquals("#e2231a", loginPage.passwordFieldBorderBottomColor());
         assertEquals("#e2231a",loginPage.errorMessageContainerColor());
     }
+
     @After
     public void closeBrowser(){
         driver.quit();

@@ -5,17 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9ba5f24-98fa-4aca-9316-e44b07bf0f3d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/saucedemotests/CheckoutYourInformationPageTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/CheckoutCompletePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CheckoutCompletePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/CheckoutOverviewPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CheckoutOverviewPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/CheckoutYourInformationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CheckoutYourInformationPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/ProductsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ProductsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/SideBarMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/SideBarMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/saucedemotests/CheckoutYourInformationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/SingleItemReviewPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/SingleItemReviewPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/SocialMediaLinks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/SocialMediaLinks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/YourCartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/YourCartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/saucedemotests/CheckoutCompletePageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/saucedemotests/CheckoutCompletePageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/saucedemotests/CheckoutOverviewPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/saucedemotests/CheckoutOverviewPageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/saucedemotests/CheckoutYourInformationPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/saucedemotests/CheckoutYourInformationPageTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/saucedemotests/LogInPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/saucedemotests/LogInPageTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/saucedemotests/LoginPageParameterizedTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/saucedemotests/LoginPageParameterizedTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/saucedemotests/ProductsPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/saucedemotests/ProductsPageTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/saucedemotests/SideBarMenuTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/saucedemotests/SideBarMenuTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/saucedemotests/SingleItemReviewPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/saucedemotests/SingleItemReviewPageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/saucedemotests/SocialMediaLinksTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/saucedemotests/SocialMediaLinksTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/saucedemotests/YourCartPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/saucedemotests/YourCartPageTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +62,55 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.LoginPageParameterizedTests.errorMsgInvalidUsernameAndPasswordTest">
+  <component name="RunManager" selected="JUnit.CheckoutYourInformationPageTests.successfulInputTest">
+    <configuration name="CheckoutOverviewPageTests.checkoutOverviewPageTitleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SauceDemoFrontEndTesting" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="saucedemotests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="saucedemotests" />
+      <option name="MAIN_CLASS_NAME" value="saucedemotests.CheckoutOverviewPageTests" />
+      <option name="METHOD_NAME" value="checkoutOverviewPageTitleTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CheckoutYourInformationPageTests.successfulInputTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SauceDemoFrontEndTesting" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="saucedemotests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="saucedemotests" />
+      <option name="MAIN_CLASS_NAME" value="saucedemotests.CheckoutYourInformationPageTests" />
+      <option name="METHOD_NAME" value="successfulInputTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CheckoutYourInformationPageTests.yourInformationErrorStateUserInterfaceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SauceDemoFrontEndTesting" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="saucedemotests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="saucedemotests" />
+      <option name="MAIN_CLASS_NAME" value="saucedemotests.CheckoutYourInformationPageTests" />
+      <option name="METHOD_NAME" value="yourInformationErrorStateUserInterfaceTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LoginPageParameterizedTests.errorMsgInvalidUsernameAndPasswordTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SauceDemoFrontEndTesting" />
       <extension name="coverage">
@@ -66,52 +123,6 @@
       <option name="MAIN_CLASS_NAME" value="saucedemotests.LoginPageParameterizedTests" />
       <option name="METHOD_NAME" value="errorMsgInvalidUsernameAndPasswordTest(java.lang.String)" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SideBarMenuTests.sideBarMenuCloseButtonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SauceDemoFrontEndTesting" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="saucedemotests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="saucedemotests" />
-      <option name="MAIN_CLASS_NAME" value="saucedemotests.SideBarMenuTests" />
-      <option name="METHOD_NAME" value="sideBarMenuCloseButtonTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SingleItemReviewPageTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SauceDemoFrontEndTesting" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="saucedemotests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="saucedemotests" />
-      <option name="MAIN_CLASS_NAME" value="saucedemotests.SingleItemReviewPageTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SocialMediaLinksTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SauceDemoFrontEndTesting" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="saucedemotests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="saucedemotests" />
-      <option name="MAIN_CLASS_NAME" value="saucedemotests.SocialMediaLinksTests" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -133,11 +144,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CheckoutYourInformationPageTests.successfulInputTest" />
+        <item itemvalue="JUnit.CheckoutOverviewPageTests.checkoutOverviewPageTitleTest" />
+        <item itemvalue="JUnit.CheckoutYourInformationPageTests.yourInformationErrorStateUserInterfaceTest" />
         <item itemvalue="JUnit.LoginPageParameterizedTests.errorMsgInvalidUsernameAndPasswordTest" />
         <item itemvalue="JUnit.YourCartPageTests" />
-        <item itemvalue="JUnit.SocialMediaLinksTests" />
-        <item itemvalue="JUnit.SingleItemReviewPageTests" />
-        <item itemvalue="JUnit.SideBarMenuTests.sideBarMenuCloseButtonTest" />
       </list>
     </recent_temporary>
   </component>
@@ -151,5 +162,16 @@
       <updated>1708343516549</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

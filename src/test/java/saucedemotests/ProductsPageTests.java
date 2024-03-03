@@ -14,11 +14,13 @@ import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 
 public class ProductsPageTests {
+
     private WebDriver driver;
     private LoginPage loginPage;
     private ProductsPage productsPage;
     private SingleItemReviewPage singleItemReviewPage;
     private YourCartPage yourCartPage;
+
 
     @Before
     public void invokeBrowser(){
@@ -35,16 +37,19 @@ public class ProductsPageTests {
         loginPage.enterPassword("secret_sauce");
         loginPage.clickLoginButton();
     }
+
     @Test
     public void productsPageTitleDisplayedTest(){
         productsPage.productsPageTitleDisplayed();
         assertEquals("Products", productsPage.productsPageTitleDisplayed());
     }
+
     @Test
     public void inventoryListDisplayedTest(){
         productsPage.inventoryList();
         assertFalse(productsPage.inventoryList().isEmpty());
     }
+
     @Test
     public void allOptionsFromDropDownTest(){
         assertEquals("Name (A to Z)", productsPage.allOptionsFromDropDown().get(0).getText());
@@ -52,6 +57,7 @@ public class ProductsPageTests {
         assertEquals("Price (low to high)", productsPage.allOptionsFromDropDown().get(2).getText());
         assertEquals("Price (high to low)", productsPage.allOptionsFromDropDown().get(3).getText());
     }
+
     @Test
     public void selectFirstItemFromNameAToZFilterTest(){
         productsPage.selectOptionFromDropDown(0);
@@ -60,6 +66,7 @@ public class ProductsPageTests {
         assertEquals("Name (A to Z)", productsPage.getTextFromFilterDropDown(0));
         assertEquals("Sauce Labs Backpack", productsPage.firstItemTitleInNameAtoZFilter());
     }
+
     @Test
     public void selectFirstItemFromNameAZoAFilterTest(){
         productsPage.selectOptionFromDropDown(1);
@@ -68,6 +75,7 @@ public class ProductsPageTests {
         assertEquals("Name (Z to A)", productsPage.getTextFromFilterDropDown(1));
         assertEquals("Test.allTheThings() T-Shirt (Red)", productsPage.firstItemTitleInNameZtoAFilter());
     }
+
     @Test
     public void selectLowestPriceInPriceLowToHighFilterTest(){
         productsPage.selectOptionFromDropDown(2);
@@ -76,6 +84,7 @@ public class ProductsPageTests {
         assertEquals("Price (low to high)", productsPage.getTextFromFilterDropDown(2));
         assertEquals("$7.99", productsPage.lowestPriceInPriceLowToHighFilter());
     }
+
     @Test
     public void selectHighestPriceInPriceHighToLowFilterTest() {
         productsPage.selectOptionFromDropDown(3);
@@ -84,12 +93,14 @@ public class ProductsPageTests {
         assertEquals("Price (high to low)", productsPage.getTextFromFilterDropDown(3));
         assertEquals("$49.99", productsPage.highestPriceInPriceHighToLowFilter());
     }
+
     @Test
     public void clickBackpackTitleTest(){
         productsPage.backpackTitleClick();
         singleItemReviewPage.singleItemPageDisplayed();
         assertTrue(singleItemReviewPage.singleItemPageDisplayed());
     }
+
     @Test
     public void backpackAddToCartButtonTest(){
         productsPage.backpackAddToCartButtonDisplayed();
@@ -97,6 +108,7 @@ public class ProductsPageTests {
         productsPage.removeBackpackButtonDisplayed();
         assertTrue(productsPage.removeBackpackButtonDisplayed());
     }
+
     @Test
     public void backpackRemoveButtonTest(){
         productsPage.clickAddToCartButtonBackpack();
@@ -104,6 +116,7 @@ public class ProductsPageTests {
         productsPage.backpackAddToCartButtonDisplayed();
         assertEquals("Add to cart", productsPage.backpackAddToCartButtonDisplayed());
     }
+
     @Test
     public void yourCartIconTest(){
         productsPage.yourCartIconDisplayed();
@@ -113,6 +126,7 @@ public class ProductsPageTests {
         yourCartPage.yourCartPageDisplayed();
         assertEquals("Your Cart", yourCartPage.yourCartPageDisplayed());
     }
+
     @Test
     public void clickAddToCartOn3ItemsTest(){
         productsPage.clickAddToCartButtonBikeLight();
@@ -125,6 +139,7 @@ public class ProductsPageTests {
         productsPage.yourCartSelectedItemsBadge();
         assertEquals("2", productsPage.yourCartSelectedItemsBadge());
     }
+
     @After
     public void closeBrowser(){
         driver.quit();

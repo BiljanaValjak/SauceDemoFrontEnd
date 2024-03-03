@@ -19,6 +19,7 @@ public class CheckoutCompletePageTests {
     private CheckoutOverviewPage checkoutOverviewPage;
     private CheckoutCompletePage checkoutCompletePage;
 
+
     @Before
     public void invokeBrowserTest() {
         driver = new ChromeDriver();
