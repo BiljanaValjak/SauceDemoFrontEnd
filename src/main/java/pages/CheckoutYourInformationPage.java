@@ -58,9 +58,6 @@ public class CheckoutYourInformationPage {
     }
 
     public void enterZipCode(String zipCode){
-        String specialCharacters = "!@#$%^&*(){}[]?><";
-        if(zipCode.contains(specialCharacters))
-            throw new IllegalArgumentException("Zip Code must not contain special characters");
         driver.findElement(zipCodeField).sendKeys(zipCode);
     }
 
