@@ -95,6 +95,13 @@ public class ProductsPageTests {
     }
 
     @Test
+    public void backpackTitleHoverTest(){
+        assertEquals("#18583a", productsPage.backpackTitleColorSwitch());
+        productsPage.backpackTitleHover();
+        assertEquals("#3ddc91", productsPage.backpackTitleColorSwitch());
+    }
+
+    @Test
     public void clickBackpackTitleTest(){
         productsPage.backpackTitleClick();
         singleItemReviewPage.singleItemPageDisplayed();

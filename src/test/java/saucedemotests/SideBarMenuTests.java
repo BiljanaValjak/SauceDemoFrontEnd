@@ -15,6 +15,7 @@ public class SideBarMenuTests {
     private WebDriver driver;
     private LoginPage loginPage;
     private ProductsPage productsPage;
+    private YourCartPage yourCartPage;
     private SideBarMenu sideBarMenu;
 
 
@@ -26,6 +27,7 @@ public class SideBarMenuTests {
 
         productsPage = new ProductsPage(driver);
         loginPage = new LoginPage(driver);
+        yourCartPage = new YourCartPage(driver);
         sideBarMenu = new SideBarMenu(driver);
 
         loginPage.enterUsername("standard_user");
@@ -36,32 +38,72 @@ public class SideBarMenuTests {
     }
 
     @Test
-    public void allLinksSideBarMenuTest(){
-        assertEquals("All Items", sideBarMenu.getAllLinksSideBarMenu().get(0).getText());
-        assertEquals("About", sideBarMenu.getAllLinksSideBarMenu().get(1).getText());
-        assertEquals("Logout", sideBarMenu.getAllLinksSideBarMenu().get(2).getText());
-        assertEquals("Reset App State", sideBarMenu.getAllLinksSideBarMenu().get(3).getText());
-    }
-
-    @Test
-    public void sideBarMenuAllItemsLinkTest(){
+    public void allLinksSideBarMenuTest() throws InterruptedException {
+        Thread.sleep(250);
         assertEquals("All Items", sideBarMenu.allLinksSideBarMenu(0));
-        sideBarMenu.allItemsSideBarLink();
-    }
-
-    @Test
-    public void sideBarMenuAboutLinkTest(){
         assertEquals("About", sideBarMenu.allLinksSideBarMenu(1));
-        sideBarMenu.aboutSideBarLink();
+        assertEquals("Logout", sideBarMenu.allLinksSideBarMenu(2));
+        assertEquals("Reset App State", sideBarMenu.allLinksSideBarMenu(3));
     }
 
     @Test
-    public void sideBarMenuLogoutLinkTest(){
-        assertEquals("Logout", sideBarMenu.allLinksSideBarMenu(2));
-        sideBarMenu.logoutSideBarLink();
+    public void allItemsLinkHoverTest() throws InterruptedException {
+        Thread.sleep(250);
+        assertEquals("#18583a", sideBarMenu.allItemsLinkColorSwitch());
+        sideBarMenu.allItemsLinkHover();
+        sideBarMenu.allItemsLinkColorSwitch();
+        assertEquals("#3ddc91", sideBarMenu.allItemsLinkColorSwitch());
+
+    }
+
+    @Test
+    public void sideBarMenuAllItemsLinkTest() throws InterruptedException {
+        productsPage.clickAddToCartButtonBackpack();
+        productsPage.clickAddToCartButtonJacket();
+        productsPage.clickYourCartIcon();
+
+        sideBarMenu.clickMenuButton();
+        Thread.sleep(250);
+        sideBarMenu.allItemsSideBarLink();
+        assertEquals("All Items", sideBarMenu.allItemsSideBarLink());
+        sideBarMenu.clickAllItemsSideBarLink();
+
+        productsPage.productsPageTitleDisplayed();
+    }
+
+    @Test
+    public void sideBarMenuAboutLinkTest() throws InterruptedException {
+        Thread.sleep(250);
+        assertEquals("About", sideBarMenu.aboutSideBarLink());
+        sideBarMenu.getHrefFromAboutLink();
+    }
+
+    @Test
+    public void aboutLinkHoverColorTest() throws InterruptedException {
+        Thread.sleep(250);
+        assertEquals("#18583a", sideBarMenu.aboutLinkColorSwitch());
+        sideBarMenu.aboutLinkHover();
+        assertEquals("#3ddc91", sideBarMenu.aboutLinkColorSwitch());
+        assertEquals("https://saucelabs.com/", sideBarMenu.getHrefFromAboutLink());
+        sideBarMenu.clickAboutSideBarLink();
+    }
+
+    @Test
+    public void sideBarMenuLogoutLinkTest() throws InterruptedException {
+        Thread.sleep(250);
+        assertEquals("Logout", sideBarMenu.logoutSideBarLink());
+        sideBarMenu.clickLogoutSideBarLink();
 
         loginPage.loginPageTitleDisplayed();
         assertTrue(loginPage.loginPageTitleDisplayed());
+    }
+
+    @Test
+    public void logoutLinkHoverColorTest() throws InterruptedException {
+        Thread.sleep(250);
+        assertEquals("#18583a", sideBarMenu.logoutLinkColorSwitch());
+        sideBarMenu.logoutLinkHover();
+        assertEquals("#3ddc91", sideBarMenu.logoutLinkColorSwitch());
     }
 
     @Test
@@ -71,12 +113,24 @@ public class SideBarMenuTests {
         productsPage.yourCartSelectedItemsBadge();
         assertEquals("2", productsPage.yourCartSelectedItemsBadge());
 
-        assertEquals("Reset App State", sideBarMenu.allLinksSideBarMenu(3));
         sideBarMenu.resetAppStateSideBarLink();
+        assertEquals("Reset App State", sideBarMenu.resetAppStateSideBarLink());
+        sideBarMenu.clickResetAppStateSideBarLink();
+
+        yourCartPage.yourCartItemsCountBadge();
     }
 
     @Test
-    public void sideBarMenuCloseButtonTest(){
+    public void resetAppStateHoverColorTest() throws InterruptedException {
+        Thread.sleep(250);
+        assertEquals("#18583a", sideBarMenu.resetAppStateLinkColorSwitch());
+        sideBarMenu.restAppStateHover();
+        assertEquals("#3ddc91", sideBarMenu.resetAppStateLinkColorSwitch());
+    }
+
+    @Test
+    public void sideBarMenuCloseButtonTest() throws InterruptedException {
+        Thread.sleep(250);
         sideBarMenu.clickCloseMenuButton();
     }
 
