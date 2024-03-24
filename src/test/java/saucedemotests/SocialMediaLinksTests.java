@@ -37,24 +37,26 @@ public class SocialMediaLinksTests {
 
     @Test
     public void socialMediaLinksTest(){
-        assertEquals("Twitter", socialMediaLinks.getAllSocialMediaLinks().get(0).getText());
-        assertEquals("Facebook", socialMediaLinks.getAllSocialMediaLinks().get(1).getText());
-        assertEquals("LinkedIn", socialMediaLinks.getAllSocialMediaLinks().get(2).getText());
+        System.out.println(socialMediaLinks.getAllSocialMediaLinks());
+        assertEquals("Twitter\nFacebook\nLinkedIn", socialMediaLinks.getAllSocialMediaLinks());
     }
 
     @Test
     public void twitterLinkTest(){
         socialMediaLinks.twitterLink();
+        assertEquals("https://twitter.com/saucelabs",socialMediaLinks.getHrefFromTwitterLink());
     }
 
     @Test
     public void facebookLinkTest(){
         socialMediaLinks.facebookLink();
+        assertEquals("https://www.facebook.com/saucelabs", socialMediaLinks.getHrefFromFacebookLink());
     }
 
     @Test
     public void linkedInTest(){
         socialMediaLinks.linkedInLink();
+        assertEquals("https://www.linkedin.com/company/sauce-labs/",socialMediaLinks.getHrefFromLinkedInLink());
     }
 
     @After

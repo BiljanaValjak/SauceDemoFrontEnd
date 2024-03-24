@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
@@ -10,6 +12,7 @@ import java.util.List;
 public class ProductsPage {
 
     private WebDriver driver;
+    Actions actions;
     private By productsPageTitle = By.xpath("//*[@id=\"header_container\"]/div[2]/span");
     private By inventoryList = By.id("inventory_container");
     private By firstItemTitleInFilterNameAtoZ = By.id("item_4_title_link");
@@ -27,6 +30,7 @@ public class ProductsPage {
 
     public ProductsPage(WebDriver driver) {
         this.driver = driver;
+        this.actions = new Actions(driver);
     }
 
     public String productsPageTitleDisplayed() {
@@ -69,6 +73,16 @@ public class ProductsPage {
 
     public String highestPriceInPriceHighToLowFilter() {
         return driver.findElement(highestPriceInPriceHighToLowFilter).getText();
+    }
+
+    public void backpackTitleHover(){
+        WebElement backpack = driver.findElement(backpackTitle);
+        actions.moveToElement(backpack).perform();
+    }
+
+    public String backpackTitleColorSwitch(){
+        Color titleColor = Color.fromString(driver.findElement(backpackTitle).getCssValue("color"));
+        return titleColor.asHex();
     }
 
     public void backpackTitleClick() {

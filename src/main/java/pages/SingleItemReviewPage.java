@@ -3,11 +3,14 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
 
 public class SingleItemReviewPage {
 
     private WebDriver driver;
+    Actions actions;
     private By inventoryItem = By.id("inventory_item_container");
     private By selectedItemTitle = By.xpath("//*[@id=\"inventory_item_container\"]/div/div/div[2]/div[1]");
     private By selectedItemDescription = By.xpath("//*[@id=\"inventory_item_container\"]/div/div/div[2]/div[2]");
@@ -20,6 +23,7 @@ public class SingleItemReviewPage {
 
     public SingleItemReviewPage(WebDriver driver){
         this.driver = driver;
+        this.actions = new Actions(driver);
     }
 
     public boolean singleItemPageDisplayed(){
@@ -120,7 +124,18 @@ public class SingleItemReviewPage {
         }
     }
 
+    public void backToProductsLinkHover(){
+        WebElement element = driver.findElement(backToProductsLink);
+        actions.moveToElement(element).perform();
+    }
+
+    public String backToProductsLinkColorSwitch(){
+        Color linkColor = Color.fromString(driver.findElement(backToProductsLink).getCssValue("color"));
+        return linkColor.asHex();
+    }
+
     public void clickBackToProductsLink(){
         driver.findElement(backToProductsLink).click();
     }
+
 }

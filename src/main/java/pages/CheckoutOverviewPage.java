@@ -3,11 +3,14 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
 
 public class CheckoutOverviewPage {
 
     private WebDriver driver;
+    Actions actions;
     private By checkoutOverviewPageTitleDisplayed = By.xpath("//*[@id=\"header_container\"]/div[2]/span");
     private By descriptionLabel = By.xpath("//*[@id=\"checkout_summary_container\"]/div/div[1]/div[2]");
     private By quantityLabel = By.xpath("//*[@id=\"checkout_summary_container\"]/div/div[1]/div[1]");
@@ -31,6 +34,7 @@ public class CheckoutOverviewPage {
 
     public CheckoutOverviewPage(WebDriver driver) {
         this.driver = driver;
+        this.actions = new Actions(driver);
     }
 
     public String checkOutOverviewTitleDisplayed() {
@@ -68,6 +72,16 @@ public class CheckoutOverviewPage {
 
     public String firstItemInYourCartTitle(){
         return driver.findElement(firstItemTitleInYourCart).getText();
+    }
+
+    public void firstItemInYourCartHover(){
+        WebElement element = driver.findElement(firstItemTitleInYourCart);
+        actions.moveToElement(element).perform();
+    }
+
+    public String firstItemInYourCartColor(){
+        Color titleColor = Color.fromString(driver.findElement(firstItemTitleInYourCart).getCssValue("color"));
+        return titleColor.asHex();
     }
 
     public String firstItemInYourCartTitleFontSize(){
@@ -113,8 +127,8 @@ public class CheckoutOverviewPage {
     }
 
     public String firstItemInYourCartPriceColor(){
-        Color finishButtonColor = Color.fromString(driver.findElement(firstItemPriceInYourCart).getCssValue("color"));
-        return finishButtonColor.asHex();
+        Color firstItemColor = Color.fromString(driver.findElement(firstItemPriceInYourCart).getCssValue("color"));
+        return firstItemColor.asHex();
     }
 
     public void clickCancelButton(){

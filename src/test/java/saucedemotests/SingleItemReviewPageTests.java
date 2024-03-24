@@ -90,6 +90,13 @@ public class SingleItemReviewPageTests {
     }
 
     @Test
+    public void backToProductsLinkHoverColorTest(){
+        assertEquals("#18583a", singleItemReviewPage.backToProductsLinkColorSwitch());
+        singleItemReviewPage.backToProductsLinkHover();
+        assertEquals("#3ddc91", singleItemReviewPage.backToProductsLinkColorSwitch());
+    }
+
+    @Test
     public void clickBacToProductsLinkTest(){
         singleItemReviewPage.clickBackToProductsLink();
         productsPage.productsPageTitleDisplayed();

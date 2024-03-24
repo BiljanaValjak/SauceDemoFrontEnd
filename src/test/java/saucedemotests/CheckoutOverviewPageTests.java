@@ -81,6 +81,13 @@ public class CheckoutOverviewPageTests {
     }
 
     @Test
+    public void firstItemInYourCartHoverColorTest(){
+        assertEquals("#18583a", checkoutOverviewPage.firstItemInYourCartColor());
+        checkoutOverviewPage.firstItemInYourCartHover();
+        assertEquals("#3ddc91", checkoutOverviewPage.firstItemInYourCartColor());
+    }
+
+    @Test
     public void firstItemReviewUserInterfaceTest(){
         assertEquals("20px", checkoutOverviewPage.firstItemInYourCartTitleFontSize());
         assertEquals("\"DM Mono\", sans-serif", checkoutOverviewPage.firstItemInYourCartTitleFontFamily());
@@ -162,6 +169,7 @@ public class CheckoutOverviewPageTests {
     public void cancelButtonTest(){
         assertEquals("#ffffff", checkoutOverviewPage.cancelButtonColor());
         checkoutOverviewPage.clickCancelButton();
+
         productsPage.productsPageTitleDisplayed();
         assertEquals("Products", productsPage.productsPageTitleDisplayed());
     }
